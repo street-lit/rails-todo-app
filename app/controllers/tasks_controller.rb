@@ -31,6 +31,15 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    if Task.exists?(params[:id])
+      task = Task.find(params[:id])
+      task.destroy
+      render json: { message: "Task deleted successfully." }, status: 200
+    else
+      render json: { error_msg: 'Record Not Found!', id: params[:id] }.to_json, status: 404
+    end
+  end
 end
 
 # puts "PARAMS => #{params.inspect}"
