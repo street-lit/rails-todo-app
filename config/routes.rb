@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get('/todos/:id',    { to: 'tasks#show' })
   post('/todos',       { to: 'tasks#create' })
   delete('/todos/:id', { to: 'tasks#destroy' })
-  put('/todos/:id',    { to: 'tasks#create' })
+  put('/todos/:id',    { to: 'tasks#update' })
 end
