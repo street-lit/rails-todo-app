@@ -53,10 +53,6 @@ class TasksController < ApplicationController
   end
 end
 
-# puts "PARAMS => #{params.inspect}"
-
-# Sending a POST request to http://localhost:3000/todos with the params of { "body": "Finish Homework" }
-# I should see my todo returned to me as json (Using Postman)
 
 
 
