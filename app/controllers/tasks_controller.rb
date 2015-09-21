@@ -2,7 +2,14 @@ class TasksController < ApplicationController
 
   def index
     tasks = Task.all
-    render json: tasks.to_json, status: 200
+    respond_to do |f|
+      f.html do
+        render template: 'task/index.html.erb', locals: { tasks: tasks }
+      end
+      f.json do
+        render json: tasks.to_json, status: 200
+      end
+    end
   end
 
   def new
