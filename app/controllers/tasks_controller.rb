@@ -22,13 +22,13 @@ class TasksController < ApplicationController
       task = Task.find(params[:id])
       render template: 'task/show.html.erb', locals: { task: task }
     else
-      render template: '/task/error.html.erb', locals: { task: task }
+      render template: '/task/error.html.erb'
     end
   end
 
   def create
     if params[:name].nil? || params[:name].empty?
-      render template: '/task/error.html.erb', locals: { task: task }
+      render template: '/task/error.html.erb'
     else
       task = Task.new
       task.name = params[:name]
@@ -44,7 +44,7 @@ class TasksController < ApplicationController
       task.save
       render template: 'task/update.html.erb', locals: { task: task }
     else
-      render template: '/task/error.html.erb', locals: { task: task }
+      render template: '/task/error.html.erb'
     end
   end
 
@@ -54,7 +54,7 @@ class TasksController < ApplicationController
       task.destroy
       render template: 'task/delete.html.erb', locals: { task: task }
     else
-      render template: '/task/error.html.erb', locals: { task: task }
+      render template: '/task/error.html.erb'
     end
   end
 end

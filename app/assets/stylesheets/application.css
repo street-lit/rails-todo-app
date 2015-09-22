@@ -24,6 +24,11 @@ html, body {
 body {
   color: #387282;
   background-color: #488C9C;
+  font-family: 'Lato', sans-serif;
+}
+
+.bottom {
+  margin-bottom: 20px;
 }
 
 .table {
@@ -130,6 +135,11 @@ td a:hover{
 footer p {
   line-height: 6.5;
   font-size: 1.5em;
+}
+
+ul, li {
+  margin-top: 20px;
+  display: inline;
 }
 
 form {
