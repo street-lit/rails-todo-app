@@ -1,8 +1,20 @@
-<section class='tasks'>
-  <h2>Todos</h2>
-  <% tasks.each do |task| %>
-    <p>
-      <%= task.name %>
-   </p>
-  <% end %>
-</section>
+<div class='container'>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Todo Name</th>
+        <th>Link</th>
+        <th>Completed?</th>
+      </tr>
+    </thead>
+    <% tasks.each do |task| %>
+    <tbody>
+      <th scope="row"><%= task.id %></th>
+      <td><%= task.name %></td>
+      <td><a href='/todos/<%=task.id%>'>Todo</a></td>
+      <td><%= task.complete %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -14,13 +14,13 @@ class TasksController < ApplicationController
 
   def new
     task = Task.new
-    render json: task.to_json, status: 200
+    render template: 'task/create.html.erb', locals: { task: task }
   end
 
   def show
     if Task.exists?(params[:id])
       task = Task.find(params[:id])
-      render json: task.to_json, status: 200
+      render template: 'task/show.html.erb', locals: { task: task }
     else
       render json: { error_msg: 'Record Not Found!', id: params[:id] }.to_json, status: 404
     end

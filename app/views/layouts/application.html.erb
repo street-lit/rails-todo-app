@@ -2,15 +2,34 @@
 <html>
 <head>
   <title>Todo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>This is a header!</header>
+  <header>
+    <div class="jumbotron col-md-10 col-md-offset-1">
+      <div class="container">
+        <h1>Todo or not Todo</h1>
+      </div>
+    </div>
+  </header>
 
-  <main><%= yield %></main>
+  <div class="container">
+    <button type="button" class="btn btn-warning"><h1><a href="/todos">Todos</a></h1></button>
+    <button type="button" class="btn btn-warning"><h1><a href="/todos/new">Create New Task</a></h1></button>
+  </div>
 
-  <footer>This is a footer!</footer>
+  <div class="container">
+    <main><%= yield %></main>
+  </div>
+
+  <footer>
+    <p>Whelp, see ya later! (C) Mike HUGHES</p>
+  </footer>
 </body>
 </html>

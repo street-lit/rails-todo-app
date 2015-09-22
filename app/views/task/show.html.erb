@@ -1,2 +1,14 @@
-<h1>Task#show</h1>
-<p>Find me in app/views/task/show.html.erb</p>
+<div class='container'>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Todos: </th>
+      <th>Completed?</th>
+    </thead>
+    <tbody>
+      <th scope="row"><%= task.id %></th>
+      <td><%=task.name%></td>
+      <td><%= task.complete %></td>
+    </tbody>
+  </table>
+</div>
