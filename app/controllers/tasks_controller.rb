@@ -22,14 +22,13 @@ class TasksController < ApplicationController
       task = Task.find(params[:id])
       render template: 'task/show.html.erb', locals: { task: task }
     else
-      render json: { error_msg: 'Record Not Found!', id: params[:id] }.to_json, status: 404
+      render template: '/task/error.html.erb', locals: { task: task }
     end
   end
 
   def create
     if params[:name].nil? || params[:name].empty?
-      err_msg = "The 'name' parameter was empty or not found"
-      render json: { error_msg: err_msg }.to_json, status: 422
+      render template: '/task/error.html.erb', locals: { task: task }
     else
       task = Task.new
       task.name = params[:name]
@@ -43,9 +42,9 @@ class TasksController < ApplicationController
       task = Task.find(params[:id])
       task.complete = true
       task.save
-      render json: task.to_json, status: 200
+      render template: 'task/update.html.erb', locals: { task: task }
     else
-      render json: { error_msg: 'Record Not Found!', id: params[:id] }.to_json, status: 404
+      render template: '/task/error.html.erb', locals: { task: task }
     end
   end
 
@@ -53,9 +52,9 @@ class TasksController < ApplicationController
     if Task.exists?(params[:id])
       task = Task.find(params[:id])
       task.destroy
-      render json: { message: "Task deleted successfully." }, status: 200
+      render template: 'task/delete.html.erb', locals: { task: task }
     else
-      render json: { error_msg: 'Record Not Found!', id: params[:id] }.to_json, status: 404
+      render template: '/task/error.html.erb', locals: { task: task }
     end
   end
 end
