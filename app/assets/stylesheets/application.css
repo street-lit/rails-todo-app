@@ -39,6 +39,14 @@ a {
   color: #8E3C36;
 }
 
+.created {
+  font-size: 2em;
+  color: #FFA500;
+  height: 100px;
+  line-height: 100px;
+  white-space: nowrap;
+}
+
 h1 {
   margin: 0px;
 }

@@ -14,7 +14,7 @@ class TasksController < ApplicationController
 
   def new
     task = Task.new
-    render template: 'task/create.html.erb', locals: { task: task }
+    render template: 'task/new.html.erb', locals: { task: task }
   end
 
   def show
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
       task = Task.new
       task.name = params[:name]
       task.save
-      render json: task.to_json, status: 201
+      render template: '/task/create.html.erb', locals: { task: task }
     end
   end
 
