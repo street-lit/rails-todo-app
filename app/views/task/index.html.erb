@@ -6,6 +6,7 @@
         <th>Todo Name</th>
         <th>Link</th>
         <th>Completed?</th>
+        <th>Finish</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -14,9 +15,9 @@
       <th scope="row"><%= task.id %></th>
       <td><%= task.name %></td>
       <td><a href='/todos/<%=task.id%>'>Todo</a></td>
-      <td><%= task.complete %></td>
-      <td> <%= button_to('Destroy', 'http://www.example.com',
-          method: "delete", remote: true, class: "btn btn-warning", data: { confirm: 'Are you sure?', disable_with: 'loading...' }) %></td>
+      <td><%= task.complete  %></td>
+      <td><%=button_to 'Complete', {action: "update", id: task}, class: "btn btn-warning left",        :method=>:put %></td>
+      <td> <%= button_to('Destroy', { action: "destroy", id: task}, class: "btn btn-warning", data: { confirm: 'Are you sure?', disable_with: 'loading...' }, method: :delete) %></td>
       <% end %>
     </tbody>
   </table>

@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    tasks = Task.all
+    tasks = Task.all.order(id: :asc)
     respond_to do |f|
       f.html do
         render template: 'task/index.html.erb', locals: { tasks: tasks }

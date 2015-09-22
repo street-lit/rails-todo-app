@@ -32,11 +32,11 @@ body {
 
 th {
   font-size: 1.25em;
-  color: #913E34;
+  color: #8E3C36;
 }
 
 a {
-  color: #913E34;
+  color: #8E3C36;
 }
 
 h1 {
@@ -44,12 +44,12 @@ h1 {
 }
 
 h1 a {
-  color: #913E34;
+  color: #8E3C36;
   font-size: 1em;
 }
 
 h1 a:hover {
-  color: #913E34;
+  color: #8E3C36;
   text-decoration: none;
 }
 
@@ -59,7 +59,7 @@ label {
 }
 
 button {
-  margin: 5px;
+  margin: 3px;
 }
 
 .btn-warning {
@@ -76,12 +76,16 @@ button {
   transition: 1s ease;
 }
 
+.left {
+  float: left;
+}
+
 table {
   font-size: 1.25em;
 }
 
 td a {
-  color: #913E34;
+  color: #8E3C36;
   transition: 1s ease;
 }
 
