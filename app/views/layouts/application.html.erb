@@ -11,25 +11,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <div class="jumbotron col-md-10 col-md-offset-1">
-      <div class="container">
-        <h1>Todo or not Todo</h1>
+  <div class="page-wrap">
+    <header>
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Todo or not Todo</h1>
+        </div>
       </div>
+    </header>
+
+    <div class="container">
+      <button type="button" class="btn btn-warning"><h1><a href="/todos">Todos</a></h1></button>
+      <button type="button" class="btn btn-warning"><h1><a href="/todos/new">Create</a></h1></button>
     </div>
-  </header>
 
-  <div class="container">
-    <button type="button" class="btn btn-warning"><h1><a href="/todos">Todos</a></h1></button>
-    <button type="button" class="btn btn-warning"><h1><a href="/todos/new">Create New Task</a></h1></button>
+    <div class="container">
+      <main><%= yield %></main>
+    </div>
   </div>
 
-  <div class="container">
-    <main><%= yield %></main>
-  </div>
-
-  <footer>
-    <p>Whelp, see ya later! (C) Mike HUGHES</p>
+  <footer class = "site-footer">
+    <div class="container ">
+      <p>Whelp, see ya later! (C) Mike HUGHES</p>
+    </div>
   </footer>
 </body>
 </html>

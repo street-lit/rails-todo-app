@@ -6,6 +6,7 @@
         <th>Todo Name</th>
         <th>Link</th>
         <th>Completed?</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <% tasks.each do |task| %>
@@ -14,7 +15,11 @@
       <td><%= task.name %></td>
       <td><a href='/todos/<%=task.id%>'>Todo</a></td>
       <td><%= task.complete %></td>
+      <td> <%= button_to('Destroy', 'http://www.example.com',
+          method: "delete", remote: true, class: "btn btn-warning", data: { confirm: 'Are you sure?', disable_with: 'loading...' }) %></td>
       <% end %>
     </tbody>
   </table>
 </div>
+
+ <!-- <button type="submit" class="btn btn-warning">Delete</button> -->

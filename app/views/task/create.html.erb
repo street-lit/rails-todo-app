@@ -1,14 +1,8 @@
-<form action="/my-handling-form-page" method="post">
-  <div>
+<form action='/todos' method="post">
+  <div class="form-group">
     <label for="task">Task:</label>
-    <input type="text" id="task" />
-  </div>
-  <div>
-    <label for="complete">Complete:</label>
-    <input type="checkbox" id="complete" value="true"/> Check if completed
+    <input type="text" class="form-control" placeholder="Email" id="task" name="name"/>
   </div>
 
-  <div class="button">
-        <button type="submit">Submit New Todo</button>
-    </div>
+  <button type="submit" class="btn btn-warning">Submit</button>
 </form>
