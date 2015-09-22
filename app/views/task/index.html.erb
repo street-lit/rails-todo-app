@@ -17,7 +17,7 @@
       <td><%= task.name %></td>
       <td><a href='/todos/<%=task.id%>'>Todo</a></td>
       <td><%= task.complete  %></td>
-      <td><%=button_to 'Complete', {action: "update", id: task}, class: "btn btn-warning left",        :method=>:put %></td>
+      <td><%=button_to 'Complete', {action: "update", id: task}, class: "btn btn-warning",        :method=>:put %></td>
       <td> <%= button_to('Destroy', { action: "destroy", id: task}, class: "btn btn-warning", data: { confirm: 'Are you sure?', disable_with: 'loading...' }, method: :delete) %></td>
     </tr>
       <% end %>
